@@ -1,6 +1,6 @@
 # Simple ChatBot
 
-<img src="./chatbot_showcase.jpg" alt="Chatbot Showcase" style="height:400px max-width: 100%;">
+<img src="./chatbot_showcase.jpg" alt="Chatbot Showcase" style="height:200px max-width: 100%;">
 
 ## Features
 - [X] **Chat based on regular expression:** The ChatBot interprets user messages using predefined regular expression patterns, allowing it to understand and respond to various types of input.
