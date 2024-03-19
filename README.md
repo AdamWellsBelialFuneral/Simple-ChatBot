@@ -1,6 +1,6 @@
 # Simple ChatBot
 
-<img src="https://github.com/AdamWellsBelialFuneral/Simple-ChatBot/blob/main/project_showcase.jpg" alt="Alt img" style="max-width:100%;">
+![Alt img](https://github.com/AdamWellsBelialFuneral/Simple-ChatBot/blob/main/project_showcase.jpg)
 
 ## Features
 - [X] **Chat based on regular expression:** The ChatBot interprets user messages using predefined regular expression patterns, allowing it to understand and respond to various types of input.
