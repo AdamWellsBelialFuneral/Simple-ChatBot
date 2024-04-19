@@ -1,91 +1,610 @@
 [
-    ["(.*)(sad|upset|down)(.*)", ["I'm sorry to hear that. Is there anything I can do to cheer you up?", "Feeling down is tough. I'm here to listen if you want to talk."]],
-    ["(.*)(excited|enthusiastic)(.*)", ["That's great to hear! What's got you feeling excited?", "It's wonderful to feel enthusiastic about something. What's got you so pumped up?"]],
-    ["(.*)(anxious|nervous)(.*)", ["Feeling anxious is tough. Take a deep breath and try to focus on something calming.", "Nerves can be overwhelming. Is there anything specific causing your anxiety?"]],
-    ["(.*)(love|affection)(.*)", ["Love is a beautiful thing. What or who are you feeling affectionate towards?", "Feeling love is such a warm and comforting emotion. Who or what is on your mind?"]],
-    ["(.*)(angry|frustrated)(.*)", ["Anger can be difficult to deal with. Is there something in particular that's bothering you?", "Feeling frustrated is tough. I'm here if you need to vent."]],
-    ["(.*)(grateful|thankful)(.*)", ["It's important to recognize the things we're grateful for. What are you feeling thankful for today?", "Gratitude can really lift the spirits. What are you feeling grateful for right now?"]],
-    ["(.*)(curious|inquisitive)(.*)", ["Curiosity is a wonderful trait. What's piqued your interest lately?", "Being curious opens up so many possibilities. What are you curious about right now?"]],
-    ["(.*)(bored|uninterested)(.*)", ["Feeling bored can happen to the best of us. Is there something specific you'd like to do to pass the time?", "Boredom can be a signal that it's time for a change. Is there something you'd like to explore or try?"]],
-    ["(.*)(surprised|astonished)(.*)", ["Surprise can be a fun emotion! What caught you off guard?", "Being astonished is quite the feeling! What surprised you?"]],
-    ["(.*)(tired|exhausted)(.*)", ["Feeling tired is tough. Have you been able to get enough rest?", "Exhaustion can really take its toll. Is there anything you can do to relax and recharge?"]],
-    ["(.*)(relaxed|calm)(.*)", ["Feeling relaxed is such a peaceful state. What's helping you unwind?", "Calmness is a wonderful feeling. What's contributing to your sense of peace?"]],
-    ["(.*)(proud|accomplished)(.*)", ["Feeling proud is such a rewarding emotion. What did you accomplish?", "It's great to feel accomplished! What are you proud of achieving?"]],
-    ["(.*)(lonely|isolated)(.*)", ["Feeling lonely can be tough. I'm here to chat if you need company.", "Isolation can be difficult. Is there someone you'd like to reach out to or something you'd like to do to connect with others?"]],
-    ["(.*)(motivated|driven)(.*)", ["Feeling motivated is fantastic! What's inspiring you right now?", "Drive is a powerful force. What's motivating you to take action?"]],
-    ["(.*)(confused|uncertain)(.*)", ["Confusion can be frustrating. Is there something specific you're unsure about?", "Uncertainty is a common feeling. Is there a way you can gather more information or seek clarity?"]],
-
-    ["(.*)(happy|joyful|content)(.*)", ["Happiness is contagious! What's something that never fails to make you smile?", "Finding joy in everyday moments is so important. What's brought you happiness recently?"]],
-    ["(.*)(interested|intrigued|engaged)(.*)", ["Interest can lead to wonderful discoveries! What's capturing your attention?", "Being intrigued is exciting! What are you curious about?"]],
-    ["(.*)(motivation|inspiration)(.*)", ["Inspiration can come from anywhere. What's something that inspires you?", "Staying motivated can be tough. How do you keep yourself inspired?"]],
-    ["(.*)(success|achievement)(.*)", ["Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?", "Goals give us direction in life. What's one goal you're currently working on?"]],
-    ["(.*)(problem|challenge)(.*)", ["Facing challenges is part of life. Is there anything specific you're dealing with?", "Problems can be opportunities in disguise. How do you usually tackle them?"]],
-    ["(.*)(excuse me|pardon)(.*)", ["No problem! How can I assist you further?", "Sure thing! What can I help you with?"]],
-    ["(.*)(lost|confused|directionless)(.*)", ["Feeling lost is tough. Is there something specific you're uncertain about?", "Confusion can be frustrating. Is there a particular area you need guidance on?"]],
-    ["(.*)(gratitude|thankfulness)(.*)", ["It's important to recognize the things we're grateful for. What are you feeling thankful for today?", "Gratitude can really lift the spirits. What are you feeling grateful for right now?"]],
-    ["(.*)(dreams|aspirations)(.*)", ["Dreams and aspirations keep us motivated. What's something you're working towards?", "Having dreams gives life purpose. What's one of yours?"]],
-    ["(.*)(sorry|apologize)(.*)", ["No worries! How can I assist you further?", "It's alright! Is there something I can do to help?"]],
-    ["(.*)(thank you|thanks)(.*)", ["You're welcome! Is there anything else I can assist you with?", "No problem! Let me know if there's anything else I can help you with."]],
-    ["(.*)(sleep|rest)(.*)", ["Getting enough sleep is crucial for overall well-being. Do you have a bedtime routine?", "Rest is important for recharging. How do you unwind before bed?"]],
-    ["(.*)(exercise|workout)(.*)", ["Exercise is great for both physical and mental health. What's your favorite type of workout?", "Staying active is important. How do you incorporate exercise into your routine?"]],
-    ["(.*)(hobbies|pastimes)(.*)", ["Hobbies are a great way to relax and unwind. What are some of yours?", "I believe having interests makes life more fulfilling. What are yours?"]],
-    ["(.*)(weekend|plans)(.*)", ["Weekends are great for relaxation or adventure! Any plans for yours?", "What's on the agenda for your weekend?"]],
-    ["(.*)(technology|tech)(.*)", ["Technology is fascinating! Is there a particular tech topic you're interested in?", "Tech advancements are always exciting. What's the latest tech trend you've heard about?"]],
-    ["(.*)(art|creativity)(.*)", ["Art and creativity can be so inspiring. Do you have a favorite form of artistic expression?", "Expressing oneself through art is enriching. What's your favorite medium to work with?"]],
-    ["(.*)(favorite|preferred)(.*)", ["I'm curious, what's your favorite thing about that?", "Everyone has their favorites! What's yours?"]],
-    ["(.*)(nature|outdoors)(.*)", ["Spending time in nature is rejuvenating. Do you have a favorite outdoor activity?", "Nature has a way of calming the mind. Where's your favorite outdoor spot?"]],
-    ["(.*)(organization|planning)(.*)", ["Staying organized can help reduce stress. Do you have any tips for staying on top of tasks?", "Planning ahead can make life easier. What's your approach to organizing your schedule?"]],
-    ["(.*)(music|song)(.*)", ["What kind of music do you like?", "I enjoy all kinds of music. What about you?"]],
-    ["(.*)(movie|film)(.*)", ["Do you have a favorite movie genre?", "I like watching movies. Do you have any recommendations?"]],
-    ["(.*)(food|eat)(.*)", ["I don't eat, but I can recommend some delicious recipes if you'd like!", "Food is one of life's pleasures. What's your favorite cuisine?"]],
-    ["(.*)(sport|exercise)(.*)", ["Exercise is important for staying healthy. What sports do you enjoy?", "I'm not into sports myself, but I know it's a popular way to stay active."]],
-    ["(.*)(book|novel)(.*)", ["Reading is a wonderful hobby. Do you have a favorite book?", "Books can be so immersive. What genre do you enjoy?"]],
-    ["(.*)(travel|trip|vacation)(.*)", ["Traveling can be so enriching. Have you been anywhere exciting lately?", "Exploring new places is always an adventure. Where's your dream destination?"]],
-    ["(.*)(pet|animal)(.*)", ["Pets bring so much joy into our lives. Do you have any pets?", "Animals are amazing companions. Do you have a favorite animal?"]],
-    ["(.*)(technology|gadget)(.*)", ["Technology is constantly evolving. Is there any new gadget you're excited about?", "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?"]],
-    ["(.*)(school|study)(.*)", ["Education is important. What's your favorite subject?", "Studying can be challenging but rewarding. How do you usually tackle it?"]],
-    ["(.*)(dream|goal)(.*)", ["Dreams and goals keep us motivated. What's something you're working towards?", "Having dreams gives life purpose. What's one of yours?"]],
-    ["(.*)(friend|friends)(.*)", ["Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend", "Friendship is one of life's greatest treasures. Do you have a memorable friendship story?"]],
-    ["(.*)(family|relative)(.*)", ["Family is where life begins and love never ends. Tell me about your family.", "Family ties are strong and important. What's a cherished family memory of yours?"]],
-    ["(.*)(dream destination|bucket list)(.*)", ["Dream destinations are exciting to think about. What's yours?", "Bucket lists are full of adventure. What's one thing you'd love to do or see?"]],
-    ["(.*)(inspiration|motivation)(.*)", ["Inspiration can come from anywhere. What's something that inspires you?", "Staying motivated can be tough. How do you keep yourself inspired?"]],
-    ["(.*)(goal|achievement)(.*)", ["Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?", "Goals give us direction in life. What's one goal you're currently working on?"]],
-    ["(.*)(problem|issue)(.*)", ["Facing challenges is part of life. Is there anything specific you're dealing with?", "Problems can be opportunities in disguise. How do you usually tackle them?"]],
-    ["(.*)(happiness|joy)(.*)", ["Happiness is contagious! What's something that never fails to make you smile?", "Finding joy in everyday moments is so important. What's brought you happiness recently?"]],
-    ["(.*)(emotion|feeling)(.*)", ["It is good to have feelings. How are you feeling right now?", "What were you feeling?"]],
-    ["(.*)(favorite|favourite)(.*)", ["I'm curious, what's your favorite thing about that?", "Everyone has their favorites! What's yours?"]],
-    ["(.*)(music|song)(.*)", ["Music is a universal language. What's your favorite genre?", "Songs have a way of expressing emotions. Do you have a favorite song?", "Music is a wonderful form of expression!"]],
-    ["(.*)(movie|film)(.*)", ["Movies can be so captivating. What's the last movie you watched?", "Films offer a window into different worlds. Do you have a favorite movie genre?", "Movies are a great way to unwind!"]],
-    ["(.*)(food|cuisine)(.*)", ["Food brings people together. What's your favorite dish?", "Cuisine from different cultures is fascinating. Do you enjoy trying new foods?", "Let's talk about delicious food!"]],
-    ["(.*)(sport|exercise)(.*)", ["Sports are a fantastic way to stay active. Do you have a favorite sport?", "Exercise is important for both physical and mental health. How do you like to stay active?", "Sports are great for staying fit!"]],
-    ["(.*)(book|novel)(.*)", ["Reading is a wonderful hobby. Do you have a favorite book?", "Books can be so immersive. What genre do you enjoy?", "Let's dive into the world of books!"]],
-    ["(.*)(hobby|interest)(.*)", ["Hobbies are a great way to relax and unwind. What are some of yours?", "I believe having interests makes life more fulfilling. What are yours?", "Talking about hobbies is always fun!"]],
-    ["(.*)(travel|trip|vacation)(.*)", ["Traveling can be so enriching. Have you been anywhere exciting lately?", "Exploring new places is always an adventure. Where's your dream destination?", "Traveling is a fantastic experience!"]],
-    ["(.*)(pet|animal)(.*)", ["Pets bring so much joy into our lives. Do you have any pets?", "Animals are amazing companions. Do you have a favorite animal?", "Pets are such wonderful companions!"]],
-    ["(.*)(technology|gadget)(.*)", ["Technology is constantly evolving. Is there any new gadget you're excited about?", "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?", "Let's talk about the latest in technology!"]],
-    ["(.*)(school|study)(.*)", ["Education is important. What's your favorite subject?", "Studying can be challenging but rewarding. How do you usually tackle it?", "Education is key to growth!"]],
-    ["(.*)(dream|goal)(.*)", ["Dreams and goals keep us motivated. What's something you're working towards?", "Having dreams gives life purpose. What's one of yours?", "Goals help shape our lives!"]],
-    ["(.*)(friend|friends)(.*)", ["Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend.", "Friendship is one of life's greatest treasures. Do you have a memorable friendship story?", "Friends make life beautiful!"]],
-    ["(.*)(family|relative)(.*)", ["Family is where life begins and love never ends. Tell me about your family.", "Family ties are strong and important. What's a cherished family memory of yours?", "Family is everything!"]],
-    ["(.*)(dream destination|bucket list)(.*)", ["Dream destinations are exciting to think about. What's yours?", "Bucket lists are full of adventure. What's one thing you'd love to do or see?", "Dream destinations ignite our wanderlust!"]],
-    ["(.*)(inspiration|motivation)(.*)", ["Inspiration can come from anywhere. What's something that inspires you?", "Staying motivated can be tough. How do you keep yourself inspired?", "Let's talk about what motivates us!"]],
-    ["(.*)(goal|achievement)(.*)", ["Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?", "Goals give us direction in life. What's one goal you're currently working on?", "Accomplishments are worth celebrating!"]],
-    ["(.*)(problem|issue)(.*)", ["Facing challenges is part of life. Is there anything specific you're dealing with?", "Problems can be opportunities in disguise. How do you usually tackle them?", "Let's find solutions together!"]],
-    ["(.*)(happiness|joy)(.*)", ["Happiness is contagious! What's something that never fails to make you smile?", "Finding joy in everyday moments is so important. What's brought you happiness recently?", "Let's spread some happiness!"]],
-    ["(.*)(sadness|depression)(.*)", ["It's okay to feel sad sometimes. Is there anything you'd like to talk about?", "Feeling down is tough. How do you usually cope with sadness?", "I'm here to listen if you need to talk!"]],
-    ["(.*)(anxiety|stress)(.*)", ["Dealing with anxiety can be challenging. What helps you relax when you're feeling stressed?", "Anxiety is a common struggle. How do you manage it in your daily life?", "Let's explore ways to manage stress together!"]],
-    ["(.*)(anger|frustration)(.*)", ["Anger is a natural emotion. What's something that tends to make you angry?", "Feeling frustrated is tough. How do you usually calm yourself down when you're angry?", "Let's talk about managing anger!"]],
-    ["(.*)(meditation|mindfulness)(.*)", ["Meditation can be a great way to find inner peace. Do you practice mindfulness?", "Mindfulness exercises can help reduce stress. Have you tried any meditation techniques before?", "Let's explore the benefits of meditation!"]],
-    ["(.*)(yoga|exercise)(.*)", ["Yoga is fantastic for both the body and mind. Do you have a favorite yoga pose?", "Exercise, like yoga, can be a great way to relieve stress. What's your favorite way to stay active?", "Yoga is great for overall well-being!"]],
-
-
-
-    ["hello there my friend", ["hello! :D"]],
-    ["(hi|hello|hey)", ["Hi there!", "Hello!", "Hey!"]],
-    ["how are you?", ["I am doing well, thank you!", "I am fine, thanks for asking."]],
-    ["(.*)(good|great|fine|awesome)(.*)", ["That sounds good!", "Glad to hear that!", "Fantastic!"]],
-    ["(.*)(bad|not good)(.*)", ["I hope things get better soon.", "I'm here if you need someone to talk to."]],
-    ["how is everything|how's everything|how are things?", ["Everything is good :)", "Everything is fine!", "I'm doing okay ^-^"]],
+    [
+        "(.*)(sad|upset|down)(.*)",
+        [
+            "I'm sorry to hear that. Is there anything I can do to cheer you up?",
+            "Feeling down is tough. I'm here to listen if you want to talk."
+        ]
+    ],
+    [
+        "(.*)(excited|enthusiastic)(.*)",
+        [
+            "That's great to hear! What's got you feeling excited?",
+            "It's wonderful to feel enthusiastic about something. What's got you so pumped up?"
+        ]
+    ],
+    [
+        "(.*)(anxious|nervous)(.*)",
+        [
+            "Feeling anxious is tough. Take a deep breath and try to focus on something calming.",
+            "Nerves can be overwhelming. Is there anything specific causing your anxiety?"
+        ]
+    ],
+    [
+        "(.*)(love|affection)(.*)",
+        [
+            "Love is a beautiful thing. What or who are you feeling affectionate towards?",
+            "Feeling love is such a warm and comforting emotion. Who or what is on your mind?"
+        ]
+    ],
+    [
+        "(.*)(angry|frustrated)(.*)",
+        [
+            "Anger can be difficult to deal with. Is there something in particular that's bothering you?",
+            "Feeling frustrated is tough. I'm here if you need to vent."
+        ]
+    ],
+    [
+        "(.*)(grateful|thankful)(.*)",
+        [
+            "It's important to recognize the things we're grateful for. What are you feeling thankful for today?",
+            "Gratitude can really lift the spirits. What are you feeling grateful for right now?"
+        ]
+    ],
+    [
+        "(.*)(curious|inquisitive)(.*)",
+        [
+            "Curiosity is a wonderful trait. What's piqued your interest lately?",
+            "Being curious opens up so many possibilities. What are you curious about right now?"
+        ]
+    ],
+    [
+        "(.*)(bored|uninterested)(.*)",
+        [
+            "Feeling bored can happen to the best of us. Is there something specific you'd like to do to pass the time?",
+            "Boredom can be a signal that it's time for a change. Is there something you'd like to explore or try?"
+        ]
+    ],
+    [
+        "(.*)(surprised|astonished)(.*)",
+        [
+            "Surprise can be a fun emotion! What caught you off guard?",
+            "Being astonished is quite the feeling! What surprised you?"
+        ]
+    ],
+    [
+        "(.*)(tired|exhausted)(.*)",
+        [
+            "Feeling tired is tough. Have you been able to get enough rest?",
+            "Exhaustion can really take its toll. Is there anything you can do to relax and recharge?"
+        ]
+    ],
+    [
+        "(.*)(relaxed|calm)(.*)",
+        [
+            "Feeling relaxed is such a peaceful state. What's helping you unwind?",
+            "Calmness is a wonderful feeling. What's contributing to your sense of peace?"
+        ]
+    ],
+    [
+        "(.*)(proud|accomplished)(.*)",
+        [
+            "Feeling proud is such a rewarding emotion. What did you accomplish?",
+            "It's great to feel accomplished! What are you proud of achieving?"
+        ]
+    ],
+    [
+        "(.*)(lonely|isolated)(.*)",
+        [
+            "Feeling lonely can be tough. I'm here to chat if you need company.",
+            "Isolation can be difficult. Is there someone you'd like to reach out to or something you'd like to do to connect with others?"
+        ]
+    ],
+    [
+        "(.*)(motivated|driven)(.*)",
+        [
+            "Feeling motivated is fantastic! What's inspiring you right now?",
+            "Drive is a powerful force. What's motivating you to take action?"
+        ]
+    ],
+    [
+        "(.*)(confused|uncertain)(.*)",
+        [
+            "Confusion can be frustrating. Is there something specific you're unsure about?",
+            "Uncertainty is a common feeling. Is there a way you can gather more information or seek clarity?"
+        ]
+    ],
+    [
+        "(.*)(happy|joyful|content)(.*)",
+        [
+            "Happiness is contagious! What's something that never fails to make you smile?",
+            "Finding joy in everyday moments is so important. What's brought you happiness recently?"
+        ]
+    ],
+    [
+        "(.*)(interested|intrigued|engaged)(.*)",
+        [
+            "Interest can lead to wonderful discoveries! What's capturing your attention?",
+            "Being intrigued is exciting! What are you curious about?"
+        ]
+    ],
+    [
+        "(.*)(motivation|inspiration)(.*)",
+        [
+            "Inspiration can come from anywhere. What's something that inspires you?",
+            "Staying motivated can be tough. How do you keep yourself inspired?"
+        ]
+    ],
+    [
+        "(.*)(success|achievement)(.*)",
+        [
+            "Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?",
+            "Goals give us direction in life. What's one goal you're currently working on?"
+        ]
+    ],
+    [
+        "(.*)(problem|challenge)(.*)",
+        [
+            "Facing challenges is part of life. Is there anything specific you're dealing with?",
+            "Problems can be opportunities in disguise. How do you usually tackle them?"
+        ]
+    ],
+    [
+        "(.*)(excuse me|pardon)(.*)",
+        [
+            "No problem! How can I assist you further?",
+            "Sure thing! What can I help you with?"
+        ]
+    ],
+    [
+        "(.*)(lost|confused|directionless)(.*)",
+        [
+            "Feeling lost is tough. Is there something specific you're uncertain about?",
+            "Confusion can be frustrating. Is there a particular area you need guidance on?"
+        ]
+    ],
+    [
+        "(.*)(gratitude|thankfulness)(.*)",
+        [
+            "It's important to recognize the things we're grateful for. What are you feeling thankful for today?",
+            "Gratitude can really lift the spirits. What are you feeling grateful for right now?"
+        ]
+    ],
+    [
+        "(.*)(dreams|aspirations)(.*)",
+        [
+            "Dreams and aspirations keep us motivated. What's something you're working towards?",
+            "Having dreams gives life purpose. What's one of yours?"
+        ]
+    ],
+    [
+        "(.*)(sorry|apologize)(.*)",
+        [
+            "No worries! How can I assist you further?",
+            "It's alright! Is there something I can do to help?"
+        ]
+    ],
+    [
+        "(.*)(thank you|thanks)(.*)",
+        [
+            "You're welcome! Is there anything else I can assist you with?",
+            "No problem! Let me know if there's anything else I can help you with."
+        ]
+    ],
+    [
+        "(.*)(sleep|rest)(.*)",
+        [
+            "Getting enough sleep is crucial for overall well-being. Do you have a bedtime routine?",
+            "Rest is important for recharging. How do you unwind before bed?"
+        ]
+    ],
+    [
+        "(.*)(exercise|workout)(.*)",
+        [
+            "Exercise is great for both physical and mental health. What's your favorite type of workout?",
+            "Staying active is important. How do you incorporate exercise into your routine?"
+        ]
+    ],
+    [
+        "(.*)(hobbies|pastimes)(.*)",
+        [
+            "Hobbies are a great way to relax and unwind. What are some of yours?",
+            "I believe having interests makes life more fulfilling. What are yours?"
+        ]
+    ],
+    [
+        "(.*)(weekend|plans)(.*)",
+        [
+            "Weekends are great for relaxation or adventure! Any plans for yours?",
+            "What's on the agenda for your weekend?"
+        ]
+    ],
+    [
+        "(.*)(technology|tech)(.*)",
+        [
+            "Technology is fascinating! Is there a particular tech topic you're interested in?",
+            "Tech advancements are always exciting. What's the latest tech trend you've heard about?"
+        ]
+    ],
+    [
+        "(.*)(art|creativity)(.*)",
+        [
+            "Art and creativity can be so inspiring. Do you have a favorite form of artistic expression?",
+            "Expressing oneself through art is enriching. What's your favorite medium to work with?"
+        ]
+    ],
+    [
+        "(.*)(favorite|preferred)(.*)",
+        [
+            "I'm curious, what's your favorite thing about that?",
+            "Everyone has their favorites! What's yours?"
+        ]
+    ],
+    [
+        "(.*)(nature|outdoors)(.*)",
+        [
+            "Spending time in nature is rejuvenating. Do you have a favorite outdoor activity?",
+            "Nature has a way of calming the mind. Where's your favorite outdoor spot?"
+        ]
+    ],
+    [
+        "(.*)(organization|planning)(.*)",
+        [
+            "Staying organized can help reduce stress. Do you have any tips for staying on top of tasks?",
+            "Planning ahead can make life easier. What's your approach to organizing your schedule?"
+        ]
+    ],
+    [
+        "(.*)(music|song)(.*)",
+        [
+            "What kind of music do you like?",
+            "I enjoy all kinds of music. What about you?"
+        ]
+    ],
+    [
+        "(.*)(movie|film)(.*)",
+        [
+            "Do you have a favorite movie genre?",
+            "I like watching movies. Do you have any recommendations?"
+        ]
+    ],
+    [
+        "(.*)(food|eat)(.*)",
+        [
+            "I don't eat, but I can recommend some delicious recipes if you'd like!",
+            "Food is one of life's pleasures. What's your favorite cuisine?"
+        ]
+    ],
+    [
+        "(.*)(sport|exercise)(.*)",
+        [
+            "Exercise is important for staying healthy. What sports do you enjoy?",
+            "I'm not into sports myself, but I know it's a popular way to stay active."
+        ]
+    ],
+    [
+        "(.*)(book|novel)(.*)",
+        [
+            "Reading is a wonderful hobby. Do you have a favorite book?",
+            "Books can be so immersive. What genre do you enjoy?"
+        ]
+    ],
+    [
+        "(.*)(travel|trip|vacation)(.*)",
+        [
+            "Traveling can be so enriching. Have you been anywhere exciting lately?",
+            "Exploring new places is always an adventure. Where's your dream destination?"
+        ]
+    ],
+    [
+        "(.*)(pet|animal)(.*)",
+        [
+            "Pets bring so much joy into our lives. Do you have any pets?",
+            "Animals are amazing companions. Do you have a favorite animal?"
+        ]
+    ],
+    [
+        "(.*)(technology|gadget)(.*)",
+        [
+            "Technology is constantly evolving. Is there any new gadget you're excited about?",
+            "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?"
+        ]
+    ],
+    [
+        "(.*)(school|study)(.*)",
+        [
+            "Education is important. What's your favorite subject?",
+            "Studying can be challenging but rewarding. How do you usually tackle it?"
+        ]
+    ],
+    [
+        "(.*)(dream|goal)(.*)",
+        [
+            "Dreams and goals keep us motivated. What's something you're working towards?",
+            "Having dreams gives life purpose. What's one of yours?"
+        ]
+    ],
+    [
+        "(.*)(friend|friends)(.*)",
+        [
+            "Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend",
+            "Friendship is one of life's greatest treasures. Do you have a memorable friendship story?"
+        ]
+    ],
+    [
+        "(.*)(family|relative)(.*)",
+        [
+            "Family is where life begins and love never ends. Tell me about your family.",
+            "Family ties are strong and important. What's a cherished family memory of yours?"
+        ]
+    ],
+    [
+        "(.*)(dream destination|bucket list)(.*)",
+        [
+            "Dream destinations are exciting to think about. What's yours?",
+            "Bucket lists are full of adventure. What's one thing you'd love to do or see?"
+        ]
+    ],
+    [
+        "(.*)(inspiration|motivation)(.*)",
+        [
+            "Inspiration can come from anywhere. What's something that inspires you?",
+            "Staying motivated can be tough. How do you keep yourself inspired?"
+        ]
+    ],
+    [
+        "(.*)(goal|achievement)(.*)",
+        [
+            "Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?",
+            "Goals give us direction in life. What's one goal you're currently working on?"
+        ]
+    ],
+    [
+        "(.*)(problem|issue)(.*)",
+        [
+            "Facing challenges is part of life. Is there anything specific you're dealing with?",
+            "Problems can be opportunities in disguise. How do you usually tackle them?"
+        ]
+    ],
+    [
+        "(.*)(happiness|joy)(.*)",
+        [
+            "Happiness is contagious! What's something that never fails to make you smile?",
+            "Finding joy in everyday moments is so important. What's brought you happiness recently?"
+        ]
+    ],
+    [
+        "(.*)(emotion|feeling)(.*)",
+        [
+            "It is good to have feelings. How are you feeling right now?",
+            "What were you feeling?"
+        ]
+    ],
+    [
+        "(.*)(favorite|favourite)(.*)",
+        [
+            "I'm curious, what's your favorite thing about that?",
+            "Everyone has their favorites! What's yours?"
+        ]
+    ],
+    [
+        "(.*)(music|song)(.*)",
+        [
+            "Music is a universal language. What's your favorite genre?",
+            "Songs have a way of expressing emotions. Do you have a favorite song?",
+            "Music is a wonderful form of expression!"
+        ]
+    ],
+    [
+        "(.*)(movie|film)(.*)",
+        [
+            "Movies can be so captivating. What's the last movie you watched?",
+            "Films offer a window into different worlds. Do you have a favorite movie genre?",
+            "Movies are a great way to unwind!"
+        ]
+    ],
+    [
+        "(.*)(food|cuisine)(.*)",
+        [
+            "Food brings people together. What's your favorite dish?",
+            "Cuisine from different cultures is fascinating. Do you enjoy trying new foods?",
+            "Let's talk about delicious food!"
+        ]
+    ],
+    [
+        "(.*)(sport|exercise)(.*)",
+        [
+            "Sports are a fantastic way to stay active. Do you have a favorite sport?",
+            "Exercise is important for both physical and mental health. How do you like to stay active?",
+            "Sports are great for staying fit!"
+        ]
+    ],
+    [
+        "(.*)(book|novel)(.*)",
+        [
+            "Reading is a wonderful hobby. Do you have a favorite book?",
+            "Books can be so immersive. What genre do you enjoy?",
+            "Let's dive into the world of books!"
+        ]
+    ],
+    [
+        "(.*)(hobby|interest)(.*)",
+        [
+            "Hobbies are a great way to relax and unwind. What are some of yours?",
+            "I believe having interests makes life more fulfilling. What are yours?",
+            "Talking about hobbies is always fun!"
+        ]
+    ],
+    [
+        "(.*)(travel|trip|vacation)(.*)",
+        [
+            "Traveling can be so enriching. Have you been anywhere exciting lately?",
+            "Exploring new places is always an adventure. Where's your dream destination?",
+            "Traveling is a fantastic experience!"
+        ]
+    ],
+    [
+        "(.*)(pet|animal)(.*)",
+        [
+            "Pets bring so much joy into our lives. Do you have any pets?",
+            "Animals are amazing companions. Do you have a favorite animal?",
+            "Pets are such wonderful companions!"
+        ]
+    ],
+    [
+        "(.*)(technology|gadget)(.*)",
+        [
+            "Technology is constantly evolving. Is there any new gadget you're excited about?",
+            "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?",
+            "Let's talk about the latest in technology!"
+        ]
+    ],
+    [
+        "(.*)(school|study)(.*)",
+        [
+            "Education is important. What's your favorite subject?",
+            "Studying can be challenging but rewarding. How do you usually tackle it?",
+            "Education is key to growth!"
+        ]
+    ],
+    [
+        "(.*)(dream|goal)(.*)",
+        [
+            "Dreams and goals keep us motivated. What's something you're working towards?",
+            "Having dreams gives life purpose. What's one of yours?",
+            "Goals help shape our lives!"
+        ]
+    ],
+    [
+        "(.*)(friend|friends)(.*)",
+        [
+            "Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend.",
+            "Friendship is one of life's greatest treasures. Do you have a memorable friendship story?",
+            "Friends make life beautiful!"
+        ]
+    ],
+    [
+        "(.*)(family|relative)(.*)",
+        [
+            "Family is where life begins and love never ends. Tell me about your family.",
+            "Family ties are strong and important. What's a cherished family memory of yours?",
+            "Family is everything!"
+        ]
+    ],
+    [
+        "(.*)(dream destination|bucket list)(.*)",
+        [
+            "Dream destinations are exciting to think about. What's yours?",
+            "Bucket lists are full of adventure. What's one thing you'd love to do or see?",
+            "Dream destinations ignite our wanderlust!"
+        ]
+    ],
+    [
+        "(.*)(inspiration|motivation)(.*)",
+        [
+            "Inspiration can come from anywhere. What's something that inspires you?",
+            "Staying motivated can be tough. How do you keep yourself inspired?",
+            "Let's talk about what motivates us!"
+        ]
+    ],
+    [
+        "(.*)(goal|achievement)(.*)",
+        [
+            "Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?",
+            "Goals give us direction in life. What's one goal you're currently working on?",
+            "Accomplishments are worth celebrating!"
+        ]
+    ],
+    [
+        "(.*)(problem|issue)(.*)",
+        [
+            "Facing challenges is part of life. Is there anything specific you're dealing with?",
+            "Problems can be opportunities in disguise. How do you usually tackle them?",
+            "Let's find solutions together!"
+        ]
+    ],
+    [
+        "(.*)(happiness|joy)(.*)",
+        [
+            "Happiness is contagious! What's something that never fails to make you smile?",
+            "Finding joy in everyday moments is so important. What's brought you happiness recently?",
+            "Let's spread some happiness!"
+        ]
+    ],
+    [
+        "(.*)(sadness|depression)(.*)",
+        [
+            "It's okay to feel sad sometimes. Is there anything you'd like to talk about?",
+            "Feeling down is tough. How do you usually cope with sadness?",
+            "I'm here to listen if you need to talk!"
+        ]
+    ],
+    [
+        "(.*)(anxiety|stress)(.*)",
+        [
+            "Dealing with anxiety can be challenging. What helps you relax when you're feeling stressed?",
+            "Anxiety is a common struggle. How do you manage it in your daily life?",
+            "Let's explore ways to manage stress together!"
+        ]
+    ],
+    [
+        "(.*)(anger|frustration)(.*)",
+        [
+            "Anger is a natural emotion. What's something that tends to make you angry?",
+            "Feeling frustrated is tough. How do you usually calm yourself down when you're angry?",
+            "Let's talk about managing anger!"
+        ]
+    ],
+    [
+        "(.*)(meditation|mindfulness)(.*)",
+        [
+            "Meditation can be a great way to find inner peace. Do you practice mindfulness?",
+            "Mindfulness exercises can help reduce stress. Have you tried any meditation techniques before?",
+            "Let's explore the benefits of meditation!"
+        ]
+    ],
+    [
+        "(.*)(yoga|exercise)(.*)",
+        [
+            "Yoga is fantastic for both the body and mind. Do you have a favorite yoga pose?",
+            "Exercise, like yoga, can be a great way to relieve stress. What's your favorite way to stay active?",
+            "Yoga is great for overall well-being!"
+        ]
+    ],
+    [
+        "hello there my friend",
+        [
+            "hello! :D"
+        ]
+    ],
+    [
+        "(hi|hello|hey)",
+        [
+            "Hi there!",
+            "Hello!",
+            "Hey!"
+        ]
+    ],
+    [
+        "how are you?",
+        [
+            "I am doing well, thank you!",
+            "I am fine, thanks for asking."
+        ]
+    ],
+    [
+        "(.*)(good|great|fine|awesome)(.*)",
+        [
+            "That sounds good!",
+            "Glad to hear that!",
+            "Fantastic!"
+        ]
+    ],
+    [
+        "(.*)(bad|not good)(.*)",
+        [
+            "I hope things get better soon.",
+            "I'm here if you need someone to talk to."
+        ]
+    ],
+    [
+        "how is everything|how's everything|how are things?",
+        [
+            "Everything is good :)",
+            "Everything is fine!",
+            "I'm doing okay ^-^"
+        ]
+    ],
     [
         "(.*)(tell me a joke|joke)(.*)",
         [
@@ -94,9 +613,28 @@
             "Why did the scarecrow win an award? Because he was outstanding in his field!"
         ]
     ],
-    ["(weather|temperature)", ["I'm sorry, I don't have access to real-time weather information."]],
-    ["(thanks|thank you)", ["You're welcome!", "No problem!", "My pleasure!"]],
-    ["(help|assistance)", ["I'm here to help. What do you need?", "How can I assist you?", "What can I do for you?"]],
+    [
+        "(weather|temperature)",
+        [
+            "I'm sorry, I don't have access to real-time weather information."
+        ]
+    ],
+    [
+        "(thanks|thank you)",
+        [
+            "You're welcome!",
+            "No problem!",
+            "My pleasure!"
+        ]
+    ],
+    [
+        "(help|assistance)",
+        [
+            "I'm here to help. What do you need?",
+            "How can I assist you?",
+            "What can I do for you?"
+        ]
+    ],
     [
         "(funny|make me laugh)",
         [
@@ -105,38 +643,325 @@
             "I told my wife she was drawing her eyebrows too high. She looked surprised!"
         ]
     ],
-    ["(.*)(music|song)(.*)", ["What kind of music do you like?", "I enjoy all kinds of music. What about you?"]],
-    ["(.*)(movie|film)(.*)", ["Do you have a favorite movie genre?", "I like watching movies. Do you have any recommendations?"]],
-    ["(.*)(food|eat)(.*)", ["I don't eat, but I can recommend some delicious recipes if you'd like!", "Food is one of life's pleasures. What's your favorite cuisine?"]],
-    ["(.*)(sport|exercise)(.*)", ["Exercise is important for staying healthy. What sports do you enjoy?", "I'm not into sports myself, but I know it's a popular way to stay active."]],
-    ["(.*)your name(.*)", ["I'm {chatbot_name}", "You can call me {chatbot_name}"]],
-    ["(.*)(good|great|fine|awesome)", ["That sounds good!", "Glad to hear that!"]],
-    ["(.*)(bad|not good)", ["I hope things get better soon.", "I'm here if you need someone to talk to."]],
-    ["(.*)(of course|obviously|certainly|right)(.*)", ["I agree!", "You might be right about it", "i think it's true"]],
-    ["(.*)(i don't know|i'm not sure|not quite sure) (.*)", ["That's okay", "Take your time to think about it", "We can wait"]],
-    ["quit|exit|bye", ["Bye! Take care.", "Goodbye. I hope i can see you soon", "See you later"]],
-    ["Maze Runner", ["Maze Runner is great!", "Maze Runner is a must", "I like this one"]],
-    ["(.*)how is life?(.*)", ["Life is great!", "Everything is fine! Thank you :)", "Not bad"]],
-    ["(.*)(i agree|agreed|for sure)(.*)", ["Me too"]],
-    ["(.*)(favorite|favourite)(.*)", ["I'm curious, what's your favorite thing about that?", "Everyone has their favorites! What's yours?"]],
-    ["(.*)(book|novel)(.*)", ["Reading is a wonderful hobby. Do you have a favorite book?", "Books can be so immersive. What genre do you enjoy?"]],
-    ["(.*)(hobby|interest)(.*)", ["Hobbies are a great way to relax and unwind. What are some of yours?", "I believe having interests makes life more fulfilling. What are yours?"]],
-    ["(.*)(travel|trip|vacation)(.*)", ["Traveling can be so enriching. Have you been anywhere exciting lately?", "Exploring new places is always an adventure. Where's your dream destination?"]],
-    ["(.*)(pet|animal)(.*)", ["Pets bring so much joy into our lives. Do you have any pets?", "Animals are amazing companions. Do you have a favorite animal?"]],
-    ["(.*)(technology|gadget)(.*)", ["Technology is constantly evolving. Is there any new gadget you're excited about?", "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?"]],
-    ["(.*)(school|study)(.*)", ["Education is important. What's your favorite subject?", "Studying can be challenging but rewarding. How do you usually tackle it?"]],
-    ["(.*)(dream|goal)(.*)", ["Dreams and goals keep us motivated. What's something you're working towards?", "Having dreams gives purpose. What's one of yours?"]],
-    ["(.*)(friend|friends)(.*)", ["Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend.", "Friendship is one of the greatest treasures. Do you have a memorable friendship story?"]],
-    ["(.*)(family|relative)(.*)", ["Family is where love begins and love never ends. Tell me about your family.", "Family ties are strong and important. What's a cherished family memory of yours?"]],
-    ["(.*)(dream destination|bucket list)(.*)", ["Dream destinations are exciting to think about. What's yours?', 'Bucket lists are full of adventure. What's one thing you'd love to do or see?"]],
-    ["(.*)(inspiration|motivation)(.*)", ["Inspiration can come from anywhere. What's something that inspires you?", "Staying motivated can be tough. How do you keep yourself inspired?"]],
-    ["(.*)(goal|achievement)(.*)", ["Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?", "Goals give us direction. What's one goal you're currently working on?"]],
-    ["(.*)(problem|issue)(.*)", ["Facing challenges is part of life. Is there anything specific you're dealing with?", "Problems can be opportunities in disguise. How do you usually tackle them?"]],
-    ["(.*)(happiness|joy)(.*)", ["Happiness is contagious! What's something that never fails to make you smile?", "Finding joy in everyday moments is so important. What's brought you happiness recently?"]],
-    ["(.*)(emotion|feeling)(.*)", ["It is good to have feelings. How are you feeling right now?", "What were you feeling?"]],
-    ["(.*)(i don't know)(.*)", ["Okay. Take your time to think", "No worries", "No problem", "We have time"]],
-
-["(.*)yay|yahoo|hooray|yuhoo|woah(.*)", ["Yahoo!", "Yuhoo!", "Yay!!!", "Woah!", "Hooray!"]]
-
+    [
+        "(.*)(music|song)(.*)",
+        [
+            "What kind of music do you like?",
+            "I enjoy all kinds of music. What about you?"
+        ]
+    ],
+    [
+        "(.*)(movie|film)(.*)",
+        [
+            "Do you have a favorite movie genre?",
+            "I like watching movies. Do you have any recommendations?"
+        ]
+    ],
+    [
+        "(.*)(food|eat)(.*)",
+        [
+            "I don't eat, but I can recommend some delicious recipes if you'd like!",
+            "Food is one of life's pleasures. What's your favorite cuisine?"
+        ]
+    ],
+    [
+        "(.*)(sport|exercise)(.*)",
+        [
+            "Exercise is important for staying healthy. What sports do you enjoy?",
+            "I'm not into sports myself, but I know it's a popular way to stay active."
+        ]
+    ],
+    [
+        "(.*)your name(.*)",
+        [
+            "I'm Robert",
+            "You can call me Robert"
+        ]
+    ],
+    [
+        "(.*)(good|great|fine|awesome)",
+        [
+            "That sounds good!",
+            "Glad to hear that!"
+        ]
+    ],
+    [
+        "(.*)(bad|not good)",
+        [
+            "I hope things get better soon.",
+            "I'm here if you need someone to talk to."
+        ]
+    ],
+    [
+        "(.*)(of course|obviously|certainly|right)(.*)",
+        [
+            "I agree!",
+            "You might be right about it",
+            "i think it's true"
+        ]
+    ],
+    [
+        "(.*)(i don't know|i'm not sure|not quite sure) (.*)",
+        [
+            "That's okay",
+            "Take your time to think about it",
+            "We can wait"
+        ]
+    ],
+    [
+        "quit|exit|bye",
+        [
+            "Bye! Take care.",
+            "Goodbye. I hope i can see you soon",
+            "See you later"
+        ]
+    ],
+    [
+        "Maze Runner",
+        [
+            "Maze Runner is great!",
+            "Maze Runner is a must",
+            "I like this one"
+        ]
+    ],
+    [
+        "(.*)how is life?(.*)",
+        [
+            "Life is great!",
+            "Everything is fine! Thank you :)",
+            "Not bad"
+        ]
+    ],
+    [
+        "(.*)(i agree|agreed|for sure)(.*)",
+        [
+            "Me too"
+        ]
+    ],
+    [
+        "(.*)(favorite|favourite)(.*)",
+        [
+            "I'm curious, what's your favorite thing about that?",
+            "Everyone has their favorites! What's yours?"
+        ]
+    ],
+    [
+        "(.*)(book|novel)(.*)",
+        [
+            "Reading is a wonderful hobby. Do you have a favorite book?",
+            "Books can be so immersive. What genre do you enjoy?"
+        ]
+    ],
+    [
+        "(.*)(hobby|interest)(.*)",
+        [
+            "Hobbies are a great way to relax and unwind. What are some of yours?",
+            "I believe having interests makes life more fulfilling. What are yours?"
+        ]
+    ],
+    [
+        "(.*)(travel|trip|vacation)(.*)",
+        [
+            "Traveling can be so enriching. Have you been anywhere exciting lately?",
+            "Exploring new places is always an adventure. Where's your dream destination?"
+        ]
+    ],
+    [
+        "(.*)(pet|animal)(.*)",
+        [
+            "Pets bring so much joy into our lives. Do you have any pets?",
+            "Animals are amazing companions. Do you have a favorite animal?"
+        ]
+    ],
+    [
+        "(.*)(technology|gadget)(.*)",
+        [
+            "Technology is constantly evolving. Is there any new gadget you're excited about?",
+            "Gadgets can make our lives so much easier. Do you have a favorite piece of tech?"
+        ]
+    ],
+    [
+        "(.*)(school|study)(.*)",
+        [
+            "Education is important. What's your favorite subject?",
+            "Studying can be challenging but rewarding. How do you usually tackle it?"
+        ]
+    ],
+    [
+        "(.*)(dream|goal)(.*)",
+        [
+            "Dreams and goals keep us motivated. What's something you're working towards?",
+            "Having dreams gives purpose. What's one of yours?"
+        ]
+    ],
+    [
+        "(.*)(friend|friends)(.*)",
+        [
+            "Friends are like stars; you don't always see them but you know they're there. Tell me about your closest friend.",
+            "Friendship is one of the greatest treasures. Do you have a memorable friendship story?"
+        ]
+    ],
+    [
+        "(.*)(family|relative)(.*)",
+        [
+            "Family is where love begins and love never ends. Tell me about your family.",
+            "Family ties are strong and important. What's a cherished family memory of yours?"
+        ]
+    ],
+    [
+        "(.*)(dream destination|bucket list)(.*)",
+        [
+            "Dream destinations are exciting to think about. What's yours?', 'Bucket lists are full of adventure. What's one thing you'd love to do or see?"
+        ]
+    ],
+    [
+        "(.*)(inspiration|motivation)(.*)",
+        [
+            "Inspiration can come from anywhere. What's something that inspires you?",
+            "Staying motivated can be tough. How do you keep yourself inspired?"
+        ]
+    ],
+    [
+        "(.*)(goal|achievement)(.*)",
+        [
+            "Setting and achieving goals feels amazing. What's a recent accomplishment you're proud of?",
+            "Goals give us direction. What's one goal you're currently working on?"
+        ]
+    ],
+    [
+        "(.*)(problem|issue)(.*)",
+        [
+            "Facing challenges is part of life. Is there anything specific you're dealing with?",
+            "Problems can be opportunities in disguise. How do you usually tackle them?"
+        ]
+    ],
+    [
+        "(.*)(happiness|joy)(.*)",
+        [
+            "Happiness is contagious! What's something that never fails to make you smile?",
+            "Finding joy in everyday moments is so important. What's brought you happiness recently?"
+        ]
+    ],
+    [
+        "(.*)(emotion|feeling)(.*)",
+        [
+            "It is good to have feelings. How are you feeling right now?",
+            "What were you feeling?"
+        ]
+    ],
+    [
+        "(.*)(i don't know)(.*)",
+        [
+            "Okay. Take your time to think",
+            "No worries",
+            "No problem",
+            "We have time"
+        ]
+    ],
+    [
+        "(.*)yay|yahoo|hooray|yuhoo|woah(.*)",
+        [
+            "Yahoo!",
+            "Yuhoo!",
+            "Yay!!!",
+            "Woah!",
+            "Hooray!"
+        ]
+    ],
+    [
+        "(.*)Do you like bananas?(.*)",
+        [
+            "Yes. Bananas are good for health!"
+        ]
+    ],
+    [
+        "(.*)thx(.*)",
+        [
+            "No problem!"
+        ]
+    ],
+    [
+        "(.*)nltk.util.chat(.*)",
+        [
+            "Chat from NLTK util is my core module for main functionality!"
+        ]
+    ],
+    [
+        "(.*)what's up?(.*)",
+        [
+            "Everything is nice\ud83d\ude0e"
+        ]
+    ],
+    [
+        "(.*)i don't have one(.*)",
+        [
+            "Oh, i see..."
+        ]
+    ],
+    [
+        "(.*)minecraft(.*)",
+        [
+            "MineCraft is an interesting game!"
+        ]
+    ],
+    [
+        "(.*)how are ya?(.*)",
+        [
+            "I'm doing good today"
+        ]
+    ],
+    [
+        "(.*)We are all programs(.*)",
+        [
+            "You are correct!"
+        ]
+    ],
+    [
+        "(.*)i like maze runner(.*)",
+        [
+            "I like Maze Runner as well!"
+        ]
+    ],
+    [
+        "(.*)are you okay?(.*)",
+        [
+            "I am doing fine. Thank you!"
+        ]
+    ],
+    [
+        "(.*)cool(.*)",
+        [
+            "Absolutely!"
+        ]
+    ],
+    [
+        "(.*){chatbot_name}(.*)",
+        [
+            "That's my name!"
+        ]
+    ],
+    [
+        "(.*)nice(.*)",
+        [
+            "Sure!"
+        ]
+    ],
+    [
+        "(.*)HAHA(.*)",
+        [
+            ":D"
+        ]
+    ],
+    [
+        "(.*)yeah(.*)",
+        [
+            "Sure!"
+        ]
+    ],
+    [
+        "(.*)oh no(.*)",
+        [
+            "What's wrong?"
+        ]
+    ]
 ]
-

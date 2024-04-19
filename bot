@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+
+import json
+
+from termcolor import colored
+
+from commands import *
+from env import *
+from IO import *
+from operations import *
+
+def get_settings():
+    with open(f'{PATH}/settings.json', 'r') as file:
+        settings = json.load(file)
+    return settings
+
+settings = get_settings()
+
+# Command pattern
+commands_patterns = {
+    'open youtube': (colored('Opening YouTube...', settings["theme"]['secure']), open_youtube),
+    'shutdown computer': (colored('Shutting down computer in 30 min...', settings["theme"]['dangerous'], attrs=["bold"]), shutdown_computer),
+    'abort shutdown': (colored('Aborting shutdown...', settings["theme"]['positive']), abort_shutdown),
+    'open URL': (colored('Opening URL...', settings["theme"]["warning"]), open_url),
+    'clear terminal': (colored('Clearing the terminal...', settings["theme"]['positive']), clear_terminal),
+    'set chat separator': (colored('Changing chat separator...', settings["theme"]["warning"]), set_chat_separator),
+    
+}
+
+# Main Loop
+def main():
+    settings = get_settings()
+    
+    print("\n" + f"🖥 [{colored(settings['chatbot_name'], 'cyan', attrs=['bold'])}] chatbot", colored("initialized!\n", settings['theme']["positive"]))
+    
+    patterns = read_patterns()
+    patterns = translate_variables(settings, patterns)
+
+    chatbot = update_chatbot(patterns)
+
+    while True:
+        settings = get_settings()
+        user_input = get_input(settings, colored("You", "blue"))
+
+        matched_command = None
+        for command, info in commands_patterns.items():
+            if command in user_input:
+                matched_command = command
+                response = info[0]
+                action = info[1]
+                break
+
+        if matched_command:
+            bot_print(settings, response, icon="PC")
+            action(user_input[len(matched_command):].strip())
+        else:
+            response = chatbot.respond(user_input)
+            if response:
+                bot_print(settings, response)
+            else:
+                previous_input = f"{user_input.lower()}"
+                print(f"\U0001F4BB{colored(settings['chatbot_name'], 'cyan', attrs=['bold'])}:", colored("Would you like to provide a response for this?", settings['theme']["warning"], attrs=["underline"]) + " /" + colored(" [skip]", settings['theme']["positive"]))
+                user_input = get_input(settings, colored("You", "blue"), "\U0001F916")
+                if user_input.lower() != "skip":
+                    new_pattern = ("(.*)"+previous_input+"(.*)", [user_input])
+                    patterns.append(new_pattern)
+                    write_patterns(patterns)
+                    chatbot = update_chatbot(patterns)
+
+        if any(keyword in user_input.lower() for keyword in ('quit', 'exit', 'bye')):
+            break
+
+if __name__ == "__main__":
+    main()

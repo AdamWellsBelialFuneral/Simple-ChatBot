@@ -1,0 +1,11 @@
+{
+    "chat_separator": "",
+    "theme": {
+        "casual": "light_grey",
+        "dangerous": "light_red",
+        "secure": "cyan",
+        "positive": "green",
+        "warning": "yellow"
+    },
+    "chatbot_name": "Jorge"
+}
